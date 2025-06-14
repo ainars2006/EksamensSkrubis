@@ -1,8 +1,7 @@
 package Tests;
 
 public class VairakAtbilzJaut extends Jautajums{
-
-	public VairakAtbilzJaut() {
+	public VairakAtbilzJaut(String jaut, String[]atb, int par) {
 		
 	}
 

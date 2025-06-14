@@ -22,11 +22,14 @@ public class Tests {
                     options[0]
             );
             if (choice == 0) {
-            	
+            	DaritTestu();
             } else {
                 JOptionPane.showMessageDialog(null, "Uzredzēšanos");
                 System.exit(0);
             }
         }
+	}
+	public static void DaritTestu() {
+		
 	}
 }

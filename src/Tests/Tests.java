@@ -4,8 +4,10 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -38,13 +40,11 @@ public class Tests {
 	}
 	public static void DaritTestu() {
 	    List<VairakAtbilzJaut> saraksts = new ArrayList<>();
-
 	    try (BufferedReader r = new BufferedReader(new FileReader("Jaut.txt"))) {
 	        String rinda;
 	        while ((rinda = r.readLine()) != null) {
 	            String[] dalas = rinda.split(";");
 	            if (dalas.length < 6) continue;
-
 	            String jautajums = dalas[0].trim();
 	            String[] atbildes = new String[] {
 	                dalas[1].trim(),
@@ -53,7 +53,6 @@ public class Tests {
 	                dalas[4].trim()
 	            };
 	            int pareizaAtbilde = Integer.parseInt(dalas[5].trim());
-
 	            VairakAtbilzJaut jaut = new VairakAtbilzJaut(jautajums, atbildes, pareizaAtbilde);
 	            saraksts.add(jaut);
 	        }
@@ -61,7 +60,7 @@ public class Tests {
 	        JOptionPane.showMessageDialog(null, "Kļūda lasot jautājumus");
 	        return;
 	    }
-
+	    Collections.shuffle(saraksts);
 	    int rezult = 0;
 	    List<String> nepareizaAtb = new ArrayList<>();
 
@@ -78,7 +77,6 @@ public class Tests {
 	            q.getAtbildes(),
 	            q.getAtbildes()[0]
 	        );
-
 	        if (atbilde == q.getPareizaAtbilde()) {
 	        	rezult++;
 	        } else if (atbilde >= 0) {
@@ -90,8 +88,31 @@ public class Tests {
 	            return;
 	        }
 	    }
-	    String rezultats = "Tests pabeigts!\nTavs rezultāts: " + rezult + " no " + saraksts.size();
-	    int skats = JOptionPane.showOptionDialog(null,rezultats,"Rezultāts",JOptionPane.YES_NO_OPTION,JOptionPane.INFORMATION_MESSAGE,null,new String[] {"Rādīt kļūdas", "Aizvērt"},"Rādīt kļūdas");
+	    String imagePath;
+	    String gradeLabel;
+
+	    if (rezult >= 8) {
+	        imagePath = "src/Bildes/Izcili.png";
+	        gradeLabel = "Izcili!";
+	    } else if (rezult >= 5) {
+	        imagePath = "src/Bildes/Ieskaitits.png";
+	        gradeLabel = "Ieskaitīts!";
+	    } else {
+	        imagePath = "src/Bildes/Izgazies.png";
+	        gradeLabel = "Diemžēl neieskaitīts.";
+	    }
+	    ImageIcon icon = new ImageIcon(imagePath);
+	    String rezultats = "Tests pabeigts!\nTavs rezultāts: " + rezult + " no " + saraksts.size() + "\n" + gradeLabel;
+	    int skats = JOptionPane.showOptionDialog(
+	            null,
+	            rezultats,
+	            "Rezultāts",
+	            JOptionPane.YES_NO_OPTION,
+	            JOptionPane.INFORMATION_MESSAGE,
+	            icon,
+	            new String[] {"Rādīt kļūdas", "Aizvērt"},
+	            "Rādīt kļūdas"
+	    );
 	    if (skats == JOptionPane.YES_OPTION && !nepareizaAtb.isEmpty()) {
 	        JTextArea zona = new JTextArea(String.join("\n", nepareizaAtb));
 	        zona.setEditable(false);

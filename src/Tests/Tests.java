@@ -1,5 +1,7 @@
 package Tests;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
@@ -30,6 +32,6 @@ public class Tests {
         }
 	}
 	public static void DaritTestu() {
-		
+		List<VairakAtbilzJaut> jautajumi = new ArrayList<>();
 	}
 }

@@ -4,7 +4,7 @@ public abstract class Jautajums {
     protected String jautajums;
     protected String[] atbildes;
     protected int pareizaAtbilde;
-
+    
     public Jautajums(String jautajums, String[] atbildes, int pareizaAtbilde) {
         this.jautajums = jautajums;
         this.atbildes = atbildes;

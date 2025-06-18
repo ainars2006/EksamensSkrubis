@@ -1,0 +1,10 @@
+Kas ir gavenā abstrakcijas nozīme?; a)Slēpt datus; b)Novērst mantošanu; c)Lai uztaisītu vairākus konstruktorus; d)Lai vairākām klasēm būtu metodes ar vienādiem nosaukumiem;0
+Kuru atslēgvārdu izmanto, lai definētu abstraktu klasi Java valodā?; a)virtual; b)abstract; c)interface; d)static;1
+Ko dara polimorfisisms?; a)Paslēpj datus; b)Manto no subklases(apakšklases); c)Pāraksta mantotās metodes(Override); d)Uztaisa vairākus objektus;2
+Kura metode Java tiek izmantota, lai pārdefinētu (override) bāzes klases metodi?; a)@overload; b)@overwrite; c)@override; d)@abstract;2
+Ko nozīmē "abstrakta metode"?; a)Metode bez piekļuves modifikatora; b)Metode, kas automātiski izsaucas, kad objekts tiek izveidots; c)Metode, kuru nevar izsaukt; d)Metode bez ķermeņa, kuru jārealizē apakšklasē;3
+Kas raksturo runtime polimorfismu Java valodā?; a)Metožu pārslogošana (overloading); b)Statiskā saistīšana; c)Izsaukto metodi nosaka kompilators; d)Izsaukto metodi nosaka objekta tips izpildes laikā;3
+Kāpēc izmantot interfeisu nevis abstraktu klasi?; a)Jo interfeisi ļauj mantot vairākas "klases"; b)Jo interfeisi ir ātrāki par abstraktām klasēm; c)Tāpēc, ka interfeisi var saturēt mainīgos; d)Jo interfeisi ļauj veidot objektus tieši;0
+Kura no šīm situācijām vislabāk raksturo polimorfismu?; a)Klase satur tikai privātus laukus; b)Viena metode darbojas dažādos veidos atkarībā no objekta tipa; c)Objekts satur vairākus konstruktorus; d)Viena klase manto no vairākām klasēm;1
+Kāda ir atšķirība starp pārslodzi (overloading) un pārdefinēšanu (overriding)?; a)Pārslodze notiek apakšklasē, pārdefinēšana – tajā pašā klasē; b)Pārslodze maina metodes nosaukumu; c)Pārslodze maina parametru sarakstu, pārdefinēšana – uzvedību apakšklasē; d)Nav nekādas atšķirības;2
+Kas notiek, ja apakšklase nepārdefinē abstraktu metodi no abstraktās klases?; a)Kompilators izveido metodi automātiski; b)Apakšklase arī kļūst par abstraktu; c)Apakšklase kļūst par interfeisu; d)Programma automātiski pārtrauc izpildi;1
